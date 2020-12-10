@@ -67,14 +67,14 @@ const createAndUpdateStorage = () => {
         getItem("EmployeePayrollList"));
     if(employeePayrollList){
         let empPayrollData = employeePayrollList.
-        find(empData => empData._id == employeePayrollObj._id);
+        find(empData => empData.id == employeePayrollObj.id);
         if(!empPayrollData){
             employeePayrollList.push(createEmployeePayrollData());
         } else {
             const index = employeePayrollList
-            .map(empData => empData._id).indexOf(empPayrollData._id);
+            .map(empData => empData.id).indexOf(empPayrollData.id);
             employeePayrollList.
-            splice(index, 1, createEmployeePayrollData(empPayrollData._id));
+            splice(index, 1, createEmployeePayrollData(empPayrollData.id));
         }
     } else {
         employeePayrollList = [createEmployeePayrollData()]

@@ -37,7 +37,7 @@ const createInnerHtml = () => {
         document.querySelector('#table-display').innerHTML = innerHtml;
 }
 
-const getDeptHtml = (deptList) => {
+const getDeptHtml = (deptList) => {                 
     let deptHtml = '';
     for (const dept of deptList) {
         deptHtml = `${deptHtml} <div class='dept-label'>${dept}</div>`
